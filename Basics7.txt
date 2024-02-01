@@ -1,0 +1,231 @@
+Basics7
+Authorizations & Authentication
+
+
+Authentication - valid or not
+Authorization - Access
+
+Basic
+Digest
+Pre emptive
+Bearer Token
+oauth 1.0,2.0
+Api key
+
+
+
+what is jsonobjecyt, json array, jsonelement
+json object
+{}
+
+json array
+[]
+
+jsonelement
+it can json object or json array {} or []
+
+
+JSONObject => holds entier jsonobj
+JSONObject jo = new JSONObject(res.asString);
+
+from the jsonObj we have getJsonArray
+
+jo.getJSONArray("books").getJSONObject(0,1,2,3,..).get("value").toString();
+
+
+=============================
+
+
+employee.json
+[
+{},
+{},
+{},
+]
+
+it started from JSONArray --> jSONObject
+
+Response res = given()
+
+.when()
+   .get("url")
+JSONArray ja = new JSONArray(res.asString());
+ja.getjsonobject(0,1,2,3...).get("value").toString();
+
+==============
+
+student.son
+
+[
+{
+	[]
+},
+{
+	[]
+},
+{
+	[]
+},
+{
+	[]
+},
+]
+
+jsonArray--->jsonObject--->jsonarray
+
+JSONAarray ja = new jsonarr(res.asString());
+ja.getjsonObject(0,1,2,3,...).getjsonarray("courses/name of array").get("value/0 or 1").toString();
+
+
+
+================================================================
+----------------------------------------------------------------------------------
+
+Chaining
+----------
+
+in api ,
+ using create  
+
+
+framework development
+-----------------------------
+
+Framework - maintain all projects realted files
+
+objectives
+-------------
+1. ReUsability
+2. Maintainability
+3.Readability
+
+Hybrid Driven - Any combination of framework 
+------------------
+ Combination of data drievn and modular driven 
+
+Phases
+--------
+1. Understanding requirement
+	-Functional Specification (Static)
+	- Swagger
+
+2. Choose Automation Tool
+      -Rest Assured Library
+
+3. Design 
+	-what kind of folder structure, what kind of files have to create, how to manage 
+
+4.Development
+        files we decide to design , mplement those files 
+
+5. Execution + CI
+
+===============================================
+pre-requesties
+------------------
+Step 1: Create Maven Project
+
+Step 2: Update pom.xml with required dependencies
+
+Step 3: Create Folder Structure
+
+--------------------------------------------------------------
+
+Step 4: Create Routes.java -----> contains URL's
+
+Step 5: Create UserEndPoint.java  -----> CRUD method implementation
+		Created to perform Create Read Update Delete requests the User api
+                payload is request body
+
+Step 6: Create test cases
+
+Step 7 : Create Data Driven Test
+		Excel Sheet Data
+		Excel Utility
+		Data Providers
+
+Step 7 : Generate Extent Reports
+		ExtentReportManager
+		testNg.xml file
+
+Step 8: Adding Logs
+		log4j2 Dependency
+		log4j2.xml file need to be part of ---> src/test/resources
+
+Step 9 : Execution
+       	      Adding plugins in POM.xml 
+
+Download Maven Software in OS level
+in Eclipse ---- Maven is availbale
+
+
+we need to run maven outside the eclipse
+
+open cmd : check for mvn --version
+and take the project path from the project 
+ C:\Users\ahmed\eclipse-workspace\ApiE2E
+
+and			 ---- cd C:\Users\ahmed\eclipse-workspace\ApiE2E
+after this 	---- dir
+and check for 		pom.xml
+after this 	---- mvn test
+
+1. Execute tests using pom.xml within eclips
+2. Execute tests using pom.xml in cmd prompt.
+3. Commit code in local repository ( git)
+4. Push your Code to remote Remote Repository ( gitlab)
+5. Run project in jenkins ( from gitlab)
+these are all done for CI/CD process
+
+----------------------------------------------------------------------
+
+CI Process
+-------------
+Pre-Requestie
+----------------
+1.install git s/w
+2.Create an account with github and Create EMpty Repository
+            Repo URL : https://github.com/Demha007/API.git
+
+-------------------------------------------------------------------------------
+
+working direcotory --  C:\Users\ahmed\eclipse-workspace\ApiE2E
+
+1. git init --> Create local Repository
+ 
+one time
+2. git config --global user.name "your name"
+   git config --global user.email "abc@gmail.com"
+
+git status 
+
+3. git add -A ==> all files and folders to staging area
+
+   git add filename.ext
+   git add *.ext
+   git add fldername
+
+4. git commit -m "message to your knowledge"
+
+-----------------------------------------------------------------
+
+Push the code to remote repository
+5. git remote add origin "Repo url:https://github.com/Demha007/API.git" ---> Establish a connection between local repo to Remote repo [One Time]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
